@@ -33,33 +33,8 @@ reader.on('close', () => {
         const sp = arrayChunk(array,S);
         sp.reverse();
         
-        for(let l in sp){
-        for(let m in sp[l]){
-    
-        console.log("sp",sp[l][m])
-        }
-    }
-        
-        
+        array = sp.reduce((newArr, elem) => { return newArr.concat(elem) });
         n++;
     }
-    
-    let testArray = [];
-    
-    for(let l in sp){
-        for(let m in sp[l]){
-            testArray.push(sp[l][m])
-        }
-    }
-    
-    const second = arrayChunk(testArray,S);
-    
-    second.reverse();
-    
-        for(let l in second){
-        for(let m in second[l]){
-            console.log(second[l][m])
-        }
-    }
-    
+    array.forEach(result => console.log(result))
 });
